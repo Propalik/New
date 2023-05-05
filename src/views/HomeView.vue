@@ -1,18 +1,37 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <div class="main-container">
+    <BaseButton @select="select"/>
+    <RightButton @select="select"/>
+  
+  
+</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import Container from '@/components/Container.vue';
+import BaseButton from '@/components/BaseButton.vue';
+import RightButton from '@/components/RightButton.vue';
 export default {
+  components: { BaseButton, RightButton, Container },
   name: 'HomeView',
-  components: {
-    HelloWorld
+  comments:{
+    Container,
+    BaseButton,
+    RightButton
+  },
+  data() {
+  },
+  methods:{
+    select(el){
+      console.log(el, 'vvv')
+    }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.main-container{
+  margin-top: 40px;
+}
+
+</style>

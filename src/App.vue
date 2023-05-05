@@ -1,15 +1,40 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <BaseHeader />
+    <router-view />
   </div>
 </template>
 
+<script>
+import BaseHeader from "./components/BaseHeader.vue";
+export default {
+  components: {
+    BaseHeader,
+  },
+};
+</script>
+
+
 <style lang="scss">
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+div,
+header,
+footer,
+ul,
+li {
+  display: flex;
+}
+
+
+
 #app {
+  display: flex;
+  flex-direction: column;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
